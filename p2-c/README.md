@@ -6,7 +6,7 @@ Trabajo realizado por Alejandro Núñez Pérez para la asignatura de Estructuras
 El trabajo consiste de varias formas de de medir el Peso Hamming (population count, popcount) y la Paridad de números de 32-bit.
 
 
-Adjunto un `makefile` que genera tres archivos de texto plano que muestran diez iteraciones de las *n* funciones de cada apartado. **No** he realizado gráficas comparativas porque no obtengo valores con los que hacer comparaciones en condiciones.
+Adjunto un `makefile` que genera tres archivos de texto plano que muestran diez iteraciones de las *n* funciones de cada apartado. Las gráficas se encuentran en un documento de Google Docs accesible [desde aquí](https://docs.google.com/spreadsheets/d/1nftwQqxO3i5TZ-Xcm5SZqozpqBHM7qClMw9nGVCZEbY/edit?usp=sharing).
 
 popcount
 ---
