@@ -4,19 +4,6 @@
 
 #define WSIZE 8*sizeof(unsigned)
 
-// unsigned listl = 4;
-// unsigned lista[] = { 0x80000000, 0x00100000, 0x00000800, 0x00000001 };
-
-unsigned listl = 8;
-unsigned lista[] = { 0x7fffffff, 0xffefffff, 0xfffff7ff, 0xfffffffe,
-					 0x01000024, 0x00356700, 0x8900ac00, 0x00bd00ef };
-
-// unsigned listl = 8;
-// unsigned lista[] = { 0x00000000, 0x10284880, 0x3590ac06, 0x70b0d0e0,
-// 					 0xffffffff, 0x12345678, 0x9abcdef0, 0xcafebeef };
-
-unsigned resultado = 0;
-
 /*
  *	Calcula el popcount de un número con un bucle `for`
  */
@@ -145,11 +132,11 @@ unsigned f5(unsigned *array, unsigned len) {
 	return r;
 }
 
-unsigned crono_f(unsigned (*func)()) {
+unsigned crono_f(unsigned (*func)(), unsigned arr[], int arrl) {
 	struct timeval t1, t2;
 
 	gettimeofday(&t1, 0);
-	unsigned int r = func(lista, listl);
+	func(arr, arrl);
 	gettimeofday(&t2, 0);
 
 	return
@@ -159,21 +146,21 @@ unsigned crono_f(unsigned (*func)()) {
 
 int main()
 {
-	const int SIZE = (1 << 20);
+	unsigned long const listl = (1 << 20);
 
-	unsigned arr[SIZE];
-	for(unsigned i = 0; i < SIZE; ++i) {
-		arr[i] = i + i;
+	unsigned lista[listl];
+	for(unsigned i = 0; i < listl; ++i) {
+		lista[i] = i;
 	}
 
-	printf("%s\t%s\t%s\t%s\t%s\t%s\n", "f1", "f2", "f3", "f4", "f5", "i");
+	printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\n", "f1", "f2", "f3", "f4", "f5", "i");
 
 	for(unsigned i = 0; i < 10; ++i) {
-		printf("%d\t", crono_f(f1));
-		printf("%d\t", crono_f(f2));
-		printf("%d\t", crono_f(f3));
-		printf("%d\t", crono_f(f4));
-		printf("%d\t", crono_f(f5));
+		printf("%d\t", crono_f(f1, lista, listl));
+		printf("%d\t", crono_f(f2, lista, listl));
+		printf("%d\t", crono_f(f3, lista, listl));
+		printf("%d\t", crono_f(f4, lista, listl));
+		printf("%d\t", crono_f(f5, lista, listl));
 		printf("%d\n", (i+1));
 	}
 	
