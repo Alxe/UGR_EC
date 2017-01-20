@@ -1,0 +1,4 @@
+line size = 64B
+cache size = 32K/32K/256K/3072K/
+cache level = 1/1/2/3/
+cache type = Data/Instruction/Unified/Unified/
