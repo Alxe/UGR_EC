@@ -13,8 +13,7 @@ llegado a el tamaño de línea de nuestro ordenador.
 Esta gráfica tiene esta forma porque a medida que aumentamos el incremento
 del bucle, se producen más fallos y se pierde más tiempo en cada acceso.
 
-![line.png](line.png)
-\newpage
+![line.png](cache/line.png)
 
 `size.cc`
 ---
@@ -25,10 +24,9 @@ array de tamaño variable `n`.
 En el momento que se desestabiliza, podemos intuir que el tamaño del array ha
 alcanzado un tamaño mayor del que cabe en la memoria cache de cierto nivel.
 
-![size.png](size.png)
-\newpage
+![size.png](cache/size.png)
 
-Carácteristicas del sistema
+Caracteristicas del sistema
 ---
 
 `make info`:  
@@ -77,4 +75,4 @@ Carácteristicas del sistema
 
 CPU-World:  
  
-![cpu-world.png](cpu-world.png)
+![cpu-world.png](cache/cpu-world.png)
